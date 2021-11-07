@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent();
                 intent.setAction(Intent.ACTION_VIEW);
                 intent.addCategory(Intent.CATEGORY_BROWSABLE);
-                intent.setData(Uri.parse("http://casidiablo.net"));
+                intent.setData(Uri.parse("https://github.com/nauman-aziz/Makh-rij-al-Hur-f"));
                 startActivity(intent);
             }
         });
