@@ -22,14 +22,21 @@ public class TestActivity extends AppCompatActivity {
         lips = "و ب ف";
         nose = "م ن";
         mouth = "باَ بوُ بىِ";
+        runTest();
 
+    }
+    public void removeSpaces(){
+        characters.replaceAll("\\s+","");
+        throat.replaceAll("\\s+","");
+        tongue.replaceAll("\\s+","");
+        lips.replaceAll("\\s+","");
+        nose.replaceAll("\\s+","");
+        mouth.replaceAll("\\s+","");
     }
     public void runTest(){
 
         char c = selectAChar(characters);
-        textView_.setText(c);
-
-
+        textView_.setText(Character.toString(c));
     }
     public char selectAChar(String s){
 
