@@ -83,54 +83,40 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                 if(answer.equals("throat")){
                     correct();
                 }else{
-                    displayToast("wrong");
                     wrongMethod();
                 }
-                triesMethod();
-                runTest();
                 break;
             case R.id.card2:
                 if(answer.equals("nose")){
                     correct();
                 }else{
-                    displayToast("wrong");
                     wrongMethod();
                 }
-                triesMethod();
-                runTest();
                 break;
             case R.id.card3:
                 if(answer.equals("tongue")){
                     correct();
                 }else{
-                    displayToast("wrong");
                     wrongMethod();
                 }
-                triesMethod();
-                runTest();
                 break;
             case R.id.card4:
                 if(answer.equals("mouth")){
                     correct();
                 }else{
-                    displayToast("wrong");
                     wrongMethod();
                 }
-                triesMethod();
-                runTest();
                 break;
             case R.id.card5:
                 if(answer.equals("lips")){
                     correct();
                 }else{
-                    displayToast("wrong");
+
                     wrongMethod();
                 }
-                triesMethod();
-                runTest();
                 break;
-
         }
+        runTest();
 
     }
     public void correct(){
@@ -143,6 +129,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         scoreView_.setText("correct: "+String.valueOf(score)+" wrong: "+String.valueOf(wrong));
     }
     public void wrongMethod(){
+        displayToast("wrong");
         wrong++;
         scoreView_.setText("correct: "+String.valueOf(score)+" wrong: "+String.valueOf(wrong));
     }
