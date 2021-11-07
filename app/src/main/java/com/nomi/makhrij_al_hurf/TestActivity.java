@@ -12,11 +12,11 @@ import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class TestActivity extends AppCompatActivity implements View.OnClickListener {
-    String characters ,throat ,tongue ,lips ,nose ,mouth;
+    String throat ,tongue ,lips ,nose ,mouth;
     TextView textView_ ,scoreView_;
 
     String answer;
-    int score = 0;
+    int score = 0 ,tries=0,wrong=0;
     CardView _cardView[] = new CardView[5];
     char c;
     @Override
@@ -35,7 +35,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
             cardView.setOnClickListener(this);
         }
 
-        characters = "باَ بوُ بىِ م ن و ب ف ص ز س ظ ذ ث ط د ت ر ل ض ج ش ى ق ك غ خ ع ح أ ة";
+        //characters = "باَ بوُ بىِ م ن و ب ف ص ز س ظ ذ ث ط د ت ر ل ض ج ش ى ق ك غ خ ع ح أ ة";
         throat = "غ خ ع ح أ ة";
         tongue = "ص ز س ظ ذ ث ط د ت ر ل ض ج ش ى ق ك";
         lips = "و ب ف";
@@ -45,7 +45,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
 
     }
     public void removeSpaces(){
-        characters.replaceAll("\\s+","");
+        //characters.replaceAll("\\s+","");
         throat.replaceAll("\\s+","");
         tongue.replaceAll("\\s+","");
         lips.replaceAll("\\s+","");
@@ -84,7 +84,9 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                     correct();
                 }else{
                     displayToast("wrong");
+                    wrongMethod();
                 }
+                triesMethod();
                 runTest();
                 break;
             case R.id.card2:
@@ -92,7 +94,9 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                     correct();
                 }else{
                     displayToast("wrong");
+                    wrongMethod();
                 }
+                triesMethod();
                 runTest();
                 break;
             case R.id.card3:
@@ -100,7 +104,9 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                     correct();
                 }else{
                     displayToast("wrong");
+                    wrongMethod();
                 }
+                triesMethod();
                 runTest();
                 break;
             case R.id.card4:
@@ -108,7 +114,9 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                     correct();
                 }else{
                     displayToast("wrong");
+                    wrongMethod();
                 }
+                triesMethod();
                 runTest();
                 break;
             case R.id.card5:
@@ -116,7 +124,9 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                     correct();
                 }else{
                     displayToast("wrong");
+                    wrongMethod();
                 }
+                triesMethod();
                 runTest();
                 break;
 
@@ -126,7 +136,15 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
     public void correct(){
         displayToast("correct");
         score++;
-        scoreView_.setText("score: "+String.valueOf(score));
+        scoreView_.setText("correct: "+String.valueOf(score)+" wrong: "+String.valueOf(wrong));
+    }
+    public void triesMethod(){
+        tries++;
+        scoreView_.setText("correct: "+String.valueOf(score)+" wrong: "+String.valueOf(wrong));
+    }
+    public void wrongMethod(){
+        wrong++;
+        scoreView_.setText("correct: "+String.valueOf(score)+" wrong: "+String.valueOf(wrong));
     }
 
 }
