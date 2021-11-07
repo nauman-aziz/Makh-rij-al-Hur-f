@@ -1,23 +1,36 @@
 package com.nomi.makhrij_al_hurf;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
-public class TestActivity extends AppCompatActivity {
+public class TestActivity extends AppCompatActivity implements View.OnClickListener {
     String characters ,throat ,tongue ,lips ,nose ,mouth;
     TextView textView_;
     String answer;
+    CardView _cardView[] = new CardView[5];
     char c;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
         textView_ = findViewById(R.id.question);
+        _cardView[0] = findViewById(R.id.card1);
+        _cardView[1] = findViewById(R.id.card2);
+        _cardView[2] = findViewById(R.id.card3);
+        _cardView[3] = findViewById(R.id.card4);
+        _cardView[4] = findViewById(R.id.card5);
+
+        for(CardView cardView : _cardView){
+            cardView.setOnClickListener(this);
+        }
 
         characters = "باَ بوُ بىِ م ن و ب ف ص ز س ظ ذ ث ط د ت ر ل ض ج ش ى ق ك غ خ ع ح أ ة";
         throat = "غ خ ع ح أ ة";
@@ -55,6 +68,56 @@ public class TestActivity extends AppCompatActivity {
         Random random = new Random();
         int index = random.nextInt(s.length());
         return s.charAt(index);
+
+    }
+    void displayToast(String msg){
+        Toast.makeText(this,  msg , Toast.LENGTH_SHORT).show();
+    }
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.card1:
+                if(answer.equals("throat")){
+                    displayToast("correct");
+                }else{
+                    displayToast("wrong");
+                }
+                runTest();
+                break;
+            case R.id.card2:
+                if(answer.equals("nose")){
+                    displayToast("correct");
+                }else{
+                    displayToast("wrong");
+                }
+                runTest();
+                break;
+            case R.id.card3:
+                if(answer.equals("tongue")){
+                    displayToast("correct");
+                }else{
+                    displayToast("wrong");
+                }
+                runTest();
+                break;
+            case R.id.card4:
+                if(answer.equals("mouth")){
+                    displayToast("correct");
+                }else{
+                    displayToast("wrong");
+                }
+                runTest();
+                break;
+            case R.id.card5:
+                if(answer.equals("lips")){
+                    displayToast("correct");
+                }else{
+                    displayToast("wrong");
+                }
+                runTest();
+                break;
+
+        }
 
     }
 
