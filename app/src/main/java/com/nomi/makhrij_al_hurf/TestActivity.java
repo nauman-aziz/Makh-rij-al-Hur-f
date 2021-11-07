@@ -6,10 +6,13 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class TestActivity extends AppCompatActivity {
     String characters ,throat ,tongue ,lips ,nose ,mouth;
     TextView textView_;
+    String answer;
+    char c;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +38,16 @@ public class TestActivity extends AppCompatActivity {
     }
     public void runTest(){
         removeSpaces();
-        char c = selectAChar(characters);
+        int randomNum = ThreadLocalRandom.current().nextInt(1, 5 + 1);
+        switch (randomNum){
+            case 1 : answer = "throat";c = selectAChar(throat);break;
+            case 2 : answer = "tongue";c = selectAChar(tongue);break;
+            case 3 : answer = "lips";c = selectAChar(lips);break;
+            case 4 : answer = "nose";c = selectAChar(nose);break;
+            case 5 : answer = "mouth";c = selectAChar(mouth);break;
+            default: answer = "nothing";break;
+        }
+
         textView_.setText(Character.toString(c));
     }
     public char selectAChar(String s){
