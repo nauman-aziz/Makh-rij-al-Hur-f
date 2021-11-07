@@ -11,7 +11,7 @@
         android:id="@+id/question"
         android:layout_width="286dp"
         android:layout_height="185dp"
-        android:layout_marginStart="60dp"
+        android:layout_marginStart="32dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="50dp"
         android:angle="570"
@@ -27,7 +27,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/image_activity_1"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -37,14 +37,14 @@
         android:layout_height="180dp"
         android:background="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="396dp"
-        android:layout_height="165dp"
+        android:layout_width="381dp"
+        android:layout_height="173dp"
         android:orientation="horizontal"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -154,15 +154,14 @@
 
     <LinearLayout
         android:id="@+id/linearLayout1"
-        android:layout_width="397dp"
-        android:layout_height="175dp"
+        android:layout_width="379dp"
+        android:layout_height="170dp"
         android:orientation="horizontal"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
-
 
 
         <androidx.cardview.widget.CardView
@@ -193,18 +192,19 @@
                     android:layout_below="@id/cap4"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="10dp"
-                    android:text="Nose"
+                    android:text="Mouth"
                     android:textSize="24sp" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
+
         <androidx.cardview.widget.CardView
             android:id="@+id/card5"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_margin="10dp"
+            android:layout_weight="1"
             app:cardCornerRadius="5dp"
-            app:cardElevation="5dp"
-            android:layout_weight="1">
+            app:cardElevation="5dp">
 
             <RelativeLayout
                 android:layout_width="156dp"

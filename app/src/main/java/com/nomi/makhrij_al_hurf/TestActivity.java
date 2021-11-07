@@ -34,7 +34,7 @@ public class TestActivity extends AppCompatActivity {
         mouth.replaceAll("\\s+","");
     }
     public void runTest(){
-
+        removeSpaces();
         char c = selectAChar(characters);
         textView_.setText(Character.toString(c));
     }
