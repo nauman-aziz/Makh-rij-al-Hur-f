@@ -13,8 +13,10 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class TestActivity extends AppCompatActivity implements View.OnClickListener {
     String characters ,throat ,tongue ,lips ,nose ,mouth;
-    TextView textView_;
+    TextView textView_ ,scoreView_;
+
     String answer;
+    int score = 0;
     CardView _cardView[] = new CardView[5];
     char c;
     @Override
@@ -22,6 +24,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
         textView_ = findViewById(R.id.question);
+        scoreView_ = findViewById(R.id.score);
         _cardView[0] = findViewById(R.id.card1);
         _cardView[1] = findViewById(R.id.card2);
         _cardView[2] = findViewById(R.id.card3);
@@ -78,7 +81,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.card1:
                 if(answer.equals("throat")){
-                    displayToast("correct");
+                    correct();
                 }else{
                     displayToast("wrong");
                 }
@@ -86,7 +89,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.card2:
                 if(answer.equals("nose")){
-                    displayToast("correct");
+                    correct();
                 }else{
                     displayToast("wrong");
                 }
@@ -94,7 +97,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.card3:
                 if(answer.equals("tongue")){
-                    displayToast("correct");
+                    correct();
                 }else{
                     displayToast("wrong");
                 }
@@ -102,7 +105,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.card4:
                 if(answer.equals("mouth")){
-                    displayToast("correct");
+                    correct();
                 }else{
                     displayToast("wrong");
                 }
@@ -110,7 +113,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.card5:
                 if(answer.equals("lips")){
-                    displayToast("correct");
+                    correct();
                 }else{
                     displayToast("wrong");
                 }
@@ -120,6 +123,10 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         }
 
     }
-
+    public void correct(){
+        displayToast("correct");
+        score++;
+        scoreView_.setText("score: "+String.valueOf(score));
+    }
 
 }

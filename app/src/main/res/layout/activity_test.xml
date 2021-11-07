@@ -31,6 +31,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+    <TextView
+
+        android:id="@+id/score"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="116dp"
+        android:layout_marginEnd="50dp"
+        android:angle="570"
+        android:elevation="50dp"
+        android:endColor="#E2E2E2"
+        android:paddingTop="@android:dimen/app_icon_size"
+        android:startColor="#BABABA"
+        android:text="score "
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/image_activity_1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <View
         android:id="@+id/topView"
         android:layout_width="420dp"
