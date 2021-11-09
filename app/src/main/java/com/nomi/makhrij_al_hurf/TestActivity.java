@@ -3,6 +3,7 @@ package com.nomi.makhrij_al_hurf;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -44,6 +45,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         runTest();
 
     }
+
     public void removeSpaces(){
         //characters.replaceAll("\\s+","");
         throat.replaceAll("\\s+","");
@@ -133,5 +135,14 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         wrong++;
         scoreView_.setText("correct: "+String.valueOf(score)+" wrong: "+String.valueOf(wrong));
     }
+   public void share(){
+       Intent sendIntent = new Intent();
+       sendIntent.setAction(Intent.ACTION_SEND);
+       sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my score to send.");
+       sendIntent.setType("text/plain");
+
+       Intent shareIntent = Intent.createChooser(sendIntent, null);
+       startActivity(shareIntent);
+   }
 
 }

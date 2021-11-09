@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".TestActivity">
 
+
+
     <TextView
 
         android:id="@+id/question"
@@ -64,6 +66,18 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/share"
+        android:layout_width="48dp"
+        android:layout_height="51dp"
+        android:layout_centerHorizontal="true"
+        android:elevation="100dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_share_24" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
