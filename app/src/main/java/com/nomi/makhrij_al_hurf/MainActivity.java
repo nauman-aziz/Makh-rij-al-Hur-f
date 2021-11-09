@@ -20,22 +20,16 @@ public class MainActivity extends AppCompatActivity {
         btn_ = findViewById(R.id.btn_login);
 
 
-        imageView_.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setAction(Intent.ACTION_VIEW);
-                intent.addCategory(Intent.CATEGORY_BROWSABLE);
-                intent.setData(Uri.parse("https://github.com/nauman-aziz/Makh-rij-al-Hur-f"));
-                startActivity(intent);
-            }
+        imageView_.setOnClickListener(v -> {
+            Intent intent = new Intent();
+            intent.setAction(Intent.ACTION_VIEW);
+            intent.addCategory(Intent.CATEGORY_BROWSABLE);
+            intent.setData(Uri.parse("https://github.com/nauman-aziz/Makh-rij-al-Hur-f"));
+            startActivity(intent);
         });
-        btn_.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this , TestActivity.class);
-                startActivity(intent);
-            }
+        btn_.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this , TestActivity.class);
+            startActivity(intent);
         });
 
     }

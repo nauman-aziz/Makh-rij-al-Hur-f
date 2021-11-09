@@ -6,6 +6,8 @@ import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,10 +17,11 @@ import java.util.concurrent.ThreadLocalRandom;
 public class TestActivity extends AppCompatActivity implements View.OnClickListener {
     String throat ,tongue ,lips ,nose ,mouth;
     TextView textView_ ,scoreView_;
+    Button imageView_;
 
     String answer;
     int score = 0 ,tries=0,wrong=0;
-    CardView _cardView[] = new CardView[5];
+    CardView _cardView[] = new CardView[6];
     char c;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,8 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         _cardView[2] = findViewById(R.id.card3);
         _cardView[3] = findViewById(R.id.card4);
         _cardView[4] = findViewById(R.id.card5);
+        _cardView[5] = findViewById(R.id.card6);
+        imageView_ = findViewById(R.id.share);
 
         for(CardView cardView : _cardView){
             cardView.setOnClickListener(this);
@@ -117,6 +122,9 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                     wrongMethod();
                 }
                 break;
+            case R.id.card6:
+                share();
+                break;
         }
         runTest();
 
@@ -135,6 +143,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         wrong++;
         scoreView_.setText("correct: "+String.valueOf(score)+" wrong: "+String.valueOf(wrong));
     }
+
    public void share(){
        Intent sendIntent = new Intent();
        sendIntent.setAction(Intent.ACTION_SEND);
@@ -144,5 +153,6 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
        Intent shareIntent = Intent.createChooser(sendIntent, null);
        startActivity(shareIntent);
    }
+
 
 }
