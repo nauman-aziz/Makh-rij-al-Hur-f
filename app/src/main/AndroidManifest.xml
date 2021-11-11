@@ -9,7 +9,8 @@
         android:roundIcon="@drawable/pucit_logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".TestActivity"></activity>
+        <activity android:name=".PracticeActivity"></activity>
+        <activity android:name=".TestActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

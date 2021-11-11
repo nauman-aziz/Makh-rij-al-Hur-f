@@ -11,15 +11,20 @@ import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
     ImageView imageView_;
-    Button btn_;
+    Button btn_,btn2_;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         imageView_ = findViewById(R.id.view5);
         btn_ = findViewById(R.id.btn_login);
+        btn2_ = findViewById(R.id.practice);
 
 
+        btn2_.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this , PracticeActivity.class);
+            startActivity(intent);
+        });
         imageView_.setOnClickListener(v -> {
             Intent intent = new Intent();
             intent.setAction(Intent.ACTION_VIEW);

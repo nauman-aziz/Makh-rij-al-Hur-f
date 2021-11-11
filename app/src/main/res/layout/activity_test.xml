@@ -72,21 +72,6 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <Button
-        android:id="@+id/share"
-        android:layout_width="48dp"
-        android:layout_height="51dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="180dp"
-
-
-        android:elevation="100dp"
-        android:text="Share"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.955"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_share_24" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -299,23 +284,27 @@
                     android:id="@+id/cap5"
                     android:layout_width="75dp"
                     android:layout_height="75dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="21dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="60dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="15dp"
                     app:srcCompat="@drawable/lips" />
 
                 <TextView
                     android:id="@+id/textView5"
-                    android:layout_width="wrap_content"
+                    android:layout_width="59dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/cap5"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="28dp"
                     android:layout_marginTop="10dp"
                     android:text="Lips"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView

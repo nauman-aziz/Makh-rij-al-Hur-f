@@ -1,5 +1,6 @@
 package com.nomi.makhrij_al_hurf;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
@@ -17,7 +18,6 @@ import java.util.concurrent.ThreadLocalRandom;
 public class TestActivity extends AppCompatActivity implements View.OnClickListener {
     String throat ,tongue ,lips ,nose ,mouth;
     TextView textView_ ,scoreView_;
-    Button imageView_;
 
     String answer;
     int score = 0 ,tries=0,wrong=0;
@@ -35,7 +35,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         _cardView[3] = findViewById(R.id.card4);
         _cardView[4] = findViewById(R.id.card5);
         _cardView[5] = findViewById(R.id.card6);
-        imageView_ = findViewById(R.id.share);
+
 
         for(CardView cardView : _cardView){
             cardView.setOnClickListener(this);
@@ -147,12 +147,24 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
    public void share(){
        Intent sendIntent = new Intent();
        sendIntent.setAction(Intent.ACTION_SEND);
-       sendIntent.putExtra(Intent.EXTRA_TEXT, "This is my score to send.");
+       sendIntent.putExtra(Intent.EXTRA_TEXT, "My score is :"+score);
        sendIntent.setType("text/plain");
-
        Intent shareIntent = Intent.createChooser(sendIntent, null);
        startActivity(shareIntent);
    }
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        score = savedInstanceState.getInt("score");
+        wrong = savedInstanceState.getInt("wrong");
+    }
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putInt("score", score);
+        savedInstanceState.putInt("wrong", wrong);
+    }
+
 
 
 }
