@@ -42,11 +42,11 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         //characters = "باَ بوُ بىِ م ن و ب ف ص ز س ظ ذ ث ط د ت ر ل ض ج ش ى ق ك غ خ ع ح أ ة";
-        throat = "غ خ ع ح أ ة";
-        tongue = "ص ز س ظ ذ ث ط د ت ر ل ض ج ش ى ق ك";
-        lips = "و ب ف";
-        nose = "م ن";
-        mouth = "باَ بوُ بىِ";
+        throat = "غخعح";
+        tongue = "صزسظذثطدترلضجشىقك";
+        lips = "وبف";
+        nose = "من";
+        mouth = "من";
         runTest();
 
     }
